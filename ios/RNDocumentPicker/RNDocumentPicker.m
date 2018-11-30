@@ -54,7 +54,10 @@ RCT_EXPORT_METHOD(pick:(NSDictionary *)options
                   rejecter:(RCTPromiseRejectBlock)reject)
 {
     
-    UIDocumentPickerViewController *documentPicker = [[UIDocumentPickerViewController alloc] initWithDocumentTypes:@[@"public.content",@"public.data"] inMode:UIDocumentPickerModeImport];
+  //  UIDocumentPickerViewController *documentPicker = [[UIDocumentPickerViewController alloc] initWithDocumentTypes:@[@"public.content",@"public.data"] inMode:UIDocumentPickerModeImport];
+ 
+    UIDocumentPickerViewController *documentPicker = [[UIDocumentPickerViewController alloc] initWithDocumentTypes:@[@"public.content"] inMode:UIDocumentPickerModeImport];
+
     
     [composeResolvers addObject:resolve];
     [composeRejecters addObject:reject];
