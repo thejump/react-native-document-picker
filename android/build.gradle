@@ -3,7 +3,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.3.+'
+        classpath 'com.android.tools.build:gradle:2.2.3'
     }
 }
 
@@ -29,6 +29,17 @@ android {
 allprojects {
     repositories {
         mavenCentral()
+    }
+}
+
+subprojects {
+    if (project.name.contains('react-native-document-picker')) {
+        buildscript {
+            repositories {
+                jcenter()
+                google()
+            }
+        }
     }
 }
 
